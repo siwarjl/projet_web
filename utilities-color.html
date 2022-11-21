@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="formulaire.css" rel="stylesheet" type="text/css">
+<div class="container">  
+    <form id="contact"  method="post" action="insc.php">
+      <h3> Ajout d'un employé</h3>
+      
+          <fieldset>
+        <input placeholder="Nom" type="text" id="nom"name="nom" tabindex="1" required autofocus onkeyup="nameValidation ()">
+        <p id="erreurnom" ></p>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Prenom" type="text"id="prenom"name="prenom" tabindex="2" required autofocus onkeyup="prenameValidation ()">
+        <p id="erreurnom1" ></p>
+      </fieldset>
+      <fieldset>
+        <input placeholder="cin" id="cin" name="cin" type="text" tabindex="3" required autofocus  onkeyup="Cin ()" >
+        <p id="test" ></p>
+
+      </fieldset>
+      <fieldset>
+        <input placeholder="Age" id="age" name="age" type="text" tabindex="4" required autofocus onkeyup="Age()">
+        <p id="msg" ></p>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Adresse mail" id="mail" name="mail" type="email" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Telephone" type="tel" id="tel" name="tel" tabindex="6" required onkeyup="Telephone()"> <p id="msg2" ></p> <p id="msg3" ></p>
+      </fieldset>
+      <fieldset>
+        
+        <input type="radio" id="tache" name="tache" value="Mecanicien" checked="checked">
+        <label for="tache">Mecanicien</label><br>
+        <input type="radio" id="tache" name="tache" value="Remorqueur">
+        <label for="tache">Remorqueur</label><br><br>
+        <input type="radio" id="dispo" name="dispo" value="disponible" checked="checked">
+        <label for="tache">Disponible</label><br>
+        <input type="radio" id="dispo" name="dispo" value="nondisponible">
+        <label for="tache">Non disponible</label><br>
+      </fieldset>
+      <fieldset>
+     
+
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enregistrer</button>
+      </fieldset>
+    </form>
+  </div>
+  <script src="\test\ajout.js"></script>
+</html>

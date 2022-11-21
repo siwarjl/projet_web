@@ -1,17 +1,21 @@
 <?php
 $objetPdo = new PDO('mysql:host=localhost;dbname=fast_saver','root','');
 //on prepare la requete
-$pdoStat =$objetPdo->prepare('UPDATE fast_saver.commande set dateCommande=:dateCommande,etat=:etat,nb_produits=:nb_produits,id_facture=:id_facture WHERE idCommande=:num LIMIT 1');
+$pdoStat =$objetPdo->prepare('UPDATE employe set nom=:nom,prenom=:prenom,cin=:cin,age=:age,tel=:tel,mail=:mail,tel=:tel,tache=:tache,disponabilite=:disponabilite WHERE id=:num LIMIT 1');
+$pdoStat->bindValue(':num',$_POST['numemploye'], PDO::PARAM_INT);
+$pdoStat->bindValue(':nom',$_POST['nom'], PDO::PARAM_STR);
+$pdoStat->bindValue(':prenom',$_POST['prenom'], PDO::PARAM_STR);
+$pdoStat->bindValue(':cin',$_POST['cin'], PDO::PARAM_INT);
+$pdoStat->bindValue(':age',$_POST['age'], PDO::PARAM_INT);
+$pdoStat->bindValue(':mail',$_POST['mail'], PDO::PARAM_STR);
+$pdoStat->bindValue(':tel',$_POST['tel'], PDO::PARAM_INT);
+$pdoStat->bindValue(':tache',$_POST['tache'], PDO::PARAM_STR);
+$pdoStat->bindValue(':disponabilite',$_POST['dispo'], PDO::PARAM_STR);
 
-$pdoStat->bindValue(':num',$_POST['numcommande'], PDO::PARAM_INT);
-$pdoStat->bindValue(':dateCommande',$_POST['dateCommande'], PDO::PARAM_STR);
-$pdoStat->bindValue(':etat',$_POST['etat'], PDO::PARAM_STR);
-$pdoStat->bindValue(':nb_produits',$_POST['nb_produits'], PDO::PARAM_STR);
-$pdoStat->bindValue(':id_facture',$_POST['id_facture'], PDO::PARAM_STR);
+
 $executeisok=$pdoStat->execute();
-
 if($executeisok)
-{$message='la commande a ete mise a jour';
+{$message='le contact a ete modifie';
 }
 else{
     $message ='Echec de la modification';
